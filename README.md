@@ -20,6 +20,21 @@ You are tasked with building a trading system with these constraints:
 **Key Challenge**  
 How do you achieve <500ms decisions despite slow LLM inference?
 
+**Data sources available** 
+both for a single month (march)
+
+event_df: (Contains processed reports from news by an llm to suggest a signal)
+  pk / ulid: Unique identifiers for each record.
+  schema_created_at / schema_upserted_at: Timestamps showing when the schema was created and last updated (all in mid-August 2025).
+  datetime_est: The actual event timestamp (all on March 1, 2025, at different times).
+  strategy_name: In this case, all entries use the strategy events_impacts_v1_vp.
+  input_report / output_report: Contain descriptions of the context (inputs) and structured summaries (outputs) in JSON-like format.
+  causality: Explain the reasoning process of the llm
+  signal: 1, buy, 0 no trade, -1 sell
+  conviction: how sure the llm is of its suggestion
+
+market_df: (Cointains market information and prices)
+
 ---
 
 ## Deliverables
