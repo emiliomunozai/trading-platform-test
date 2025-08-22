@@ -62,10 +62,10 @@ Create `system_design.md` (≤2 pages) covering:
 ### Part 2 — Implementation Prototype (90 min)
 Implement a simplified prototype (Docker Compose with 2 services):
 
-- **Redis** — cache for pre-computed features or agent outputs.  
+- **Redis** — cache for pre-computed features or agent outputs.  (Find them in the data folder)
 - **Trading API** — FastAPI service that:  
   - `POST /decide` returns a trading decision in <500ms.  
-  - Uses cached/pre-computed values (simulate LLM outputs).  
+  - Uses cached/pre-computed values (simulate LLM outputs or use the ones in the data folder).  
   - Includes latency, model version, cache hit/miss, fallback info.
 
 **Infrastructure Requirements**
